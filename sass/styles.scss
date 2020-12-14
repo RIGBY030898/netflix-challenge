@@ -1,0 +1,251 @@
+// primary colors
+$primary-color: #000000;
+
+// secondary colors
+$secondary-color: #d22f26;
+
+// light color
+$light-color: #ffffff;
+
+// gray color
+$gray-color: #686868;
+
+@font-face {
+    font-family: "Avenir Next";
+    src: url("../fonts/AvenirNextLTPro-Regular.otf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Avenir Next Bold";
+    src: url("../fonts/AvenirNextLTPro-Bold.otf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Avenir Next Bold Condensed";
+    src: url("../fonts/AvenirNextLTPro-BoldCn.otf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Avenir Next Semi";
+    src: url("../fonts/AvenirNextLTPro-Demi.otf");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Avenir Next Semi Condensed";
+    src: url("../fonts/AvenirNextLTPro-DemiCn.otf");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Avenir Next";
+    src: url("../fonts/AvenirNextLTPro-It.otf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+body {
+    color: $light-color;
+    font-family: "Avenir Next";
+    margin: 0;
+    background-color: $primary-color;
+
+    a {
+        text-decoration: none;
+    }
+    ul {
+        padding: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+}
+
+.header {
+    padding: 1rem;
+    background-image: linear-gradient(
+        to bottom,
+        $primary-color 4%,
+        rgba($primary-color, 0.8) 60%,
+        rgba($primary-color, 0.4) 30%,
+        transparent
+    );
+
+    .nav {
+        &-list {
+            display: flex;
+            justify-content: space-evenly;
+
+            &-item {
+                a {
+                    color: $light-color;
+                    font-size: 0.86rem;
+                }
+            }
+        }
+    }
+}
+.featured {
+    margin-top: -7.2rem;
+
+    &-poster {
+        position: relative;
+        max-width: 100%;
+        min-height: 516px;
+        overflow: hidden;
+        z-index: -1;
+
+        img {
+            position: absolute;
+            left: -80%;
+        }
+    }
+    &-video {
+        padding: 0px 1rem;
+        display: none;
+    }
+    &-tags {
+        position: relative;
+        padding: 0.4rem 0;
+        margin-top: -4.8rem;
+        font-size: 0.7rem;
+        display: flex;
+        justify-content: center;
+        background-image: linear-gradient(
+            to bottom,
+            transparent 10%,
+            rgba($primary-color, 0.4)
+        );
+
+        &-tag {
+            margin-left: 0.2rem;
+
+            &:first-child {
+                margin: 0;
+                &::before {
+                    display: none;
+                }
+            }
+
+            &::before {
+                content: "•";
+                margin-right: 0.2rem;
+            }
+        }
+    }
+}
+
+.actions {
+    margin-top: -0.7rem;
+    padding: 0.2rem 0px 0.6rem;
+    background-image: linear-gradient(
+        rgba($primary-color, 0.4) 10%,
+        rgba($primary-color, 0.8) 40%,
+        $primary-color
+    );
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: "Avenir Next Semi";
+    font-size: 0.7rem;
+
+    &-link {
+        color: $light-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+            margin-top: 0.2rem;
+        }
+        img {
+            filter: invert(100%);
+        }
+    }
+    &-button {
+        font-family: "Avenir Next Semi";
+        font-size: 0.7rem;
+        height: 1.8rem;
+        display: flex;
+        align-items: center;
+        border-radius: 0.2rem;
+        border: none;
+        padding: 0px 1rem;
+
+        span {
+            margin-left: 0.2rem;
+        }
+    }
+}
+.main {
+    margin-left: 1rem;
+    margin-top: 2rem;
+
+    &-section {
+        &-title {
+            margin: 1rem 0 0.4rem;
+            font-family: "Avenir Next Bold";
+            font-size: 1.1rem;
+        }
+        &-content {
+            display: flex;
+            overflow-x: scroll;
+
+            a {
+                margin-left: 0.5rem;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }
+}
+.footer {
+    position: sticky;
+    bottom: 0;
+    background-color: $primary-color;
+
+    &-list {
+        display: flex;
+        justify-content: space-around;
+        margin-left: 1rem;
+        font-size: 0.7rem;
+
+        &-item {
+            a {
+                color: $gray-color;
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    filter: invert(40%);
+                }
+
+                &:hover {
+                    color: $light-color;
+
+                    img {
+                        filter: invert(100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.credits {
+    font-family: system-ui;
+    background: #212429;
+    font-size: 11px;
+    color: white;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+.credits a {
+    color: #f865b0;
+    text-decoration: none;
+}
